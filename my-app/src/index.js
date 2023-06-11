@@ -1,20 +1,34 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-function Greeting() {
-    return (
-        <div>
-            <Person />
-            <Message />
-        </div>
-    );
-}
+import "./index.css";
 
-const Person = () => <h2>john doe</h2>;
-const Message = () => {
-    return <p>this is my message</p>;
+const BookList = () => {
+    return (
+        <section className="bookList">
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+        </section>
+    );
+};
+
+const Book = () => {
+    const title = "Spider-Man: Across the Spider-Verse: The Art of the Movie";
+    const author = "Ramin Zahed";
+    return (
+        <article className="book">
+            <img
+                src="https://images-na.ssl-images-amazon.com/images/I/818LCPpmyWL._AC_UL900_SR900,600_.jpg"
+                alt="Spider-Man"
+            />
+            <h2>{title}</h2>
+            <h4>{author}</h4>
+        </article>
+    );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Greeting />);
+root.render(<BookList />);
